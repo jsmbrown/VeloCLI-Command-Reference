@@ -1,4 +1,4 @@
-#	--bgp_view_summary
+#	--bgp_view_summary [v4 | v6 | all]
 
 ##	Description
 Summary of BGP configuration and neighbor states

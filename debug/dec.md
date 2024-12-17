@@ -1,7 +1,7 @@
 #	--dec
 
 ##	Description
-Dump the dynamic error correction status and QoE scoring detail of all overlay paths.  Outputs include the latency, jitter, and packet loss values observed in both the tx and rx direction for each overlay path/tunnel established on the edge.  Output also includes a red/yellow/green QoE score value based on the thresholds outlined in ([this kb article](https://knowledge.broadcom.com/external/article/330715/vmware-sdwan-edge-link-selection-behavio.html)).
+Dump the dynamic error correction status and QoE scoring detail of all overlay paths.  Outputs include the latency, jitter, and packet loss values observed in both the tx and rx direction for each overlay path/tunnel established on the edge.  Output also includes a red/yellow/green QoE score value based on the thresholds outlined in [this kb article](https://knowledge.broadcom.com/external/article/330715/vmware-sdwan-edge-link-selection-behavio.html).
 
 ##  Arguments
 None
