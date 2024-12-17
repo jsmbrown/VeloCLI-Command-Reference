@@ -15,7 +15,7 @@ None
 | Element Name | WAN interface that path is established on |
 | Dest Name | Name of the peer edge/gateway that the associated tunnel is built to |
 | Dest IP | IP address of the remote edge/gateway tunnel interface |
-| Subpath COS ID | Class Of Service value assigned to the sub-path if conifgured ('-1' if no sub-paths) |
+| Subpath COS ID | Class Of Service value assigned to the sub-path if configured ('-1' if no sub-paths) |
 | Mode | Directionality of path values ('TX' for the transmit direction, 'RX' for receive) |
 | Latency | Latency measurement in milliseconds with QoE scores for voice, video, and transactional thresholds |
 | Jitter | Jitter measurement in milliseconds with QoE scores for voice, video, and transactional thresholds |
