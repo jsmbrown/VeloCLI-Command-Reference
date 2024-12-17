@@ -3,7 +3,7 @@
 ##	Description
 Summary of BGP configuration and neighbor states
 
-##  Arguments
+##  Arguments (optional)
 | Argument | Description |
 |---|---|
 | none (or 'all') | Display all BGP neighbors |
