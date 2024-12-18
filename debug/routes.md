@@ -7,7 +7,7 @@ List of routes known by the edge daemon including destination/reachability detai
 | Argument | Description |
 |---|---|
 | none (or 'all') | Display all routes |
-| prefix | Display routes only for a specific prefix/address |
+| prefix | Display routes only for a specific prefix/address (i.e. 10.1.1.1, fe80::7, etc) |
 | segment-id | Display routes only in a specific segment number (i.e. global segment is '0', additional segments increment on from '1') |
 | 'v4' or 'v6' | Display only IPv4 or IPv6 routes |
 
