@@ -13,7 +13,7 @@ List of routes known by the edge daemon including destination/reachability detai
 
 ##  Example usage
 ```
-_com:velocli> debug --routes 172.22.1.4 1 v4 
+example_com:velocli> debug --routes 172.22.1.4 1 v4 
 Address              Netmask       Type  Gateway   Next Hop Name                           Next Hop ID  Destination Name                         Dst LogicalId  Reachable  Metric  Preference  Flags   Vlan  Intf  Sub IntfId   MTU  SEG
 172.22.1.4   255.255.255.255  edge2edge      any  vNET Peer Test  3294602a-5a69-4694-a7d2-811aff737faa    vNET Peer Test  3294602a-5a69-4694-a7d2-811aff737faa       True       0        1003   DSBR  65535   any         N/A  1440    1
 172.22.1.4   255.255.255.255  edge2edge      any       AzurevWAN  891413b5-4fd7-417f-8efc-102aeb579df8         AzurevWAN  891413b5-4fd7-417f-8efc-102aeb579df8       True       0        1003   DSBR  65535   any         N/A  1440    1
