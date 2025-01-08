@@ -12,8 +12,14 @@ List of routes known by the edge daemon including destination/reachability detai
 | 'v4' or 'v6' | Display only IPv4 or IPv6 routes |
 
 ##  Example usage
-![image](Images/routes.png)
-
+```
+_com:velocli> debug --routes 172.22.1.4 1 v4 
+Address              Netmask       Type  Gateway   Next Hop Name                           Next Hop ID  Destination Name                         Dst LogicalId  Reachable  Metric  Preference  Flags   Vlan  Intf  Sub IntfId   MTU  SEG
+172.22.1.4   255.255.255.255  edge2edge      any  vNET Peer Test  3294602a-5a69-4694-a7d2-811aff737faa    vNET Peer Test  3294602a-5a69-4694-a7d2-811aff737faa       True       0        1003   DSBR  65535   any         N/A  1440    1
+172.22.1.4   255.255.255.255  edge2edge      any       AzurevWAN  891413b5-4fd7-417f-8efc-102aeb579df8         AzurevWAN  891413b5-4fd7-417f-8efc-102aeb579df8       True       0        1003   DSBR  65535   any         N/A  1440    1
+172.22.1.4   255.255.255.255  edge2edge      any       AzurevWAN  891413b5-4fd7-417f-8efc-102aeb579df8    vNET Peer Test  3294602a-5a69-4694-a7d2-811aff737faa       True       0        1003   DSBR  65535   any         N/A  1440    1
+P - PG, B - BGP, D - DCE, L - LAN SR, C - Connected, O - External, W - WAN SR, S - SecureEligible, R - Remote, s - self, r - recursive, H - HA, m - Management, n - nonVelocloud, v - ViaVeloCloud, A - RouterAdvertisement, c - CWS, a - RAS, M - MTGRE, g - Global PG Static, b - Blackhole, I - IPSec, G - GRE, p - Peer
+```
 ##  Field descriptions
 | Column | Description |
 |---|---|
