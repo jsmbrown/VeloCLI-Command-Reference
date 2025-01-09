@@ -7,7 +7,22 @@ Dump the dynamic error correction status and QoE scoring detail of all overlay p
 None
 
 ##  Example usage
-![image](Images/dec.png)
+```
+example_com:velocli> debug --dec
+Element   |            Dest  |           Dest  |  Subpath  |  Mode  |  LATENCY  LATENCY  LATENCY  LATENCY  |  JITTER  JITTER  JITTER  JITTER  |  LOSS   LOSS   LOSS   LOSS
+Name      |            Name  |             Ip  |   COS ID  |  Mode  |       ms    VOICE    VIDEO    TRANS  |      ms   VOICE   VIDEO   TRANS  |   PCT  VOICE  VIDEO  TRANS
+GE1       |             N/A  |            N/A  |      N/A  |    TX  |        0    green    green    green  |       0   green   green   green  |   0.0  green  green  green
+GE1       |             N/A  |            N/A  |      N/A  |    RX  |        0    green    green    green  |       0   green   green   green  |   0.0  green  green  green
+GE1       |       AzurevWAN  |  20.46.246.159  |       -1  |    TX  |        0    green    green    green  |       0   green   green   green  |   0.0  green  green  green
+GE1       |       AzurevWAN  |  20.46.246.159  |       -1  |    RX  |        0    green    green    green  |       0   green   green   green  |   0.0  green  green  green
+GE1       |  vNET Peer Test  |   20.29.48.111  |       -1  |    TX  |        0    green    green    green  |       1   green   green   green  |   0.0  green  green  green
+GE1       |  vNET Peer Test  |   20.29.48.111  |       -1  |    RX  |        0    green    green    green  |       0   green   green   green  |   0.0  green  green  green
+GE1       |      vcg44-dfw1  |  216.221.31.44  |       -1  |    TX  |        6    green    green    green  |       0   green   green   green  |   0.0  green  green  green
+GE1       |      vcg44-dfw1  |  216.221.31.44  |       -1  |    RX  |        5    green    green    green  |       0   green   green   green  |   0.0  green  green  green
+GE1       |      vcg88-ord1  |  216.221.27.88  |       -1  |    TX  |        8    green    green    green  |       0   green   green   green  |   0.0  green  green  green
+GE1       |      vcg88-ord1  |  216.221.27.88  |       -1  |    RX  |        5    green    green    green  |       0   green   green   green  |   0.0  green  green  green
+* indicates state pending transition
+```
 
 ##  Field descriptions
 | Column | Description |

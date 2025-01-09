@@ -7,7 +7,13 @@ Dumps a list of conifgured hubs along with basic attributes.
 None
 
 ##  Example usage
-![image](Images/hub_list.png)
+```
+example_com:velocli> debug --hub_list
+LogicalId                                 Type  HUB_ORDER  VPN_HUB_ORDER  Is_cluster
+891413b5-4fd7-417f-8efc-102aeb579df8   VPN_HUB         33             33           1
+f55b6aab-3449-4a1a-a37b-39e58f7ff2ac   VPN_HUB         34             34           1
+3294602a-5a69-4694-a7d2-811aff737faa       HUB         35              0           0
+```
 
 ##  Field descriptions
 | Column | Description |
