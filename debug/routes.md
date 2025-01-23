@@ -1,4 +1,4 @@
-#	--routes [[all|prefix] [all|segment-id] [all|v4|v6]]
+#	--routes [[all | prefix] [all | segment-id] [all | v4 | v6]]
 
 ##	Description
 List of routes known by the edge daemon including destination/reachability details and route type, preference, and flags as detailed in the [VeloCloud SD-WAN Routing Overview](https://techdocs.broadcom.com/us/en/vmware-sde/velocloud-sase/vmware-velocloud-sd-wan/6-2/sd-wan-administration-guide/overview-3-admin/vmware-sd-wan-routing-overview-admin.html)
