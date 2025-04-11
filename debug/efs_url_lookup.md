@@ -1,4 +1,4 @@
-#	--efs_url_lookup [<destination URL>]
+#	--efs_url_lookup [destination URL]
 
 ##	Description
 Fetch Web Reputation & category for a given URL
