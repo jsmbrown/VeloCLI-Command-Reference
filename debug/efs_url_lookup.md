@@ -6,7 +6,7 @@ Fetch Web Reputation & category for a given URL
 ##  Arguments (optional)
 | Argument | Description |
 |---|---|
-| <destination URL> | URL for which to fetch the web reputation & category from the edge URL filtering engine |
+| [destination URL] | URL for which to fetch the web reputation & category from the edge URL filtering engine |
 
 ##  Example usage
 ```
