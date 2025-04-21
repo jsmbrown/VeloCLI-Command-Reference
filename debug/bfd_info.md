@@ -7,8 +7,10 @@ Summary of BFD configuration and neighbor states
 | Argument | Description |
 |---|---|
 | none (or 'all') | Display all BFD peers |
+| segment-id | Numerical ID of the segment to display BFD peers from |
 | v4 | Display only IPv4 peers |
 | v6 | Display only IPv6 peers |
+| all | Display both IPv4 and IPv6 peers |
 
 ##  Example usage
 ```
