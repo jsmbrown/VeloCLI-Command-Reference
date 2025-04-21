@@ -31,7 +31,7 @@ GE6         NONE       NONE  ARS-Branch-1                         75.168.196.157
 | PublicIpAddr | Routable IP address of the edge interface on which the tunnel is built (can differ from the configured interface IP in cases of public links where the edge sits behind a NAT device) |
 | PeerIpAddr | Routable IP address of the peer edge or gateway to which the tunnel is built |
 | TunnelingMode |  |
-| Version |  |
+| Version | Version number assigned to the path upon successful establishment of the tunnel with peer |
 | Path State | Current status of the path (ACTIVE, HOTSTANDBY_IDLE, HOTSTANDBY_UP, or BACKUP) |
 | RxState | Performance status of the path from peer to edge (UNKNOWN, STABLE, UNSTABLE, QUIET, INITIAL, or STANDBY) |
 | TxState | Performance status of the path from edge to peer (UNKNOWN, STABLE, UNSTABLE, QUIET, INITIAL, or STANDBY) |
