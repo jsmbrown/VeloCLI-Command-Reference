@@ -1,7 +1,7 @@
 #	--efs_url_lookup [destination URL]
 
 ##	Description
-Fetch Web Reputation & category for a given URL
+Fetch Web Reputation & category for a given URL from the local edge cache (for non-cached URLs, the edge will query the centralized database, after which the command can be re-run)
 
 ##  Arguments (optional)
 | Argument | Description |
