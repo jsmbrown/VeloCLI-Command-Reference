@@ -6,6 +6,9 @@ List all of the tunnels with other SDWAN edges and gateways
 ##  Arguments
 None
 
+##  When to use
+
+
 ##  Example usage
 ```
 example_com:velocli> debug --path_stats

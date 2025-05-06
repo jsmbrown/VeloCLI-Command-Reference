@@ -6,7 +6,10 @@ Dumps the ARP cache for all active interfaces.
 ##  Arguments
 None
 
-##  Example usage
+<!-->  Example usage:
+Is my next hop IP in the ARP table?
+Is
+-->
 ```
 example_com:velocli> debug --arp_dump
 Interface      Address  C-Tag  Flags                Mac  S-Tag         Source Mac    State  Refcnt  Age (in seconds)
