@@ -24,5 +24,5 @@ LAG2                       UP         GE6            UP              UP
 | LAG Interface | Logical interface name of the LACP bundle |
 | LAG Status | Protocol up/down status of the LAG |
 | Slave Port | Physical interfaces included in the LAG |
-| Actor Status | Local traffic elligibility of the slave port |
-| Partner Status | LACP peer's traffic elligibility of the slave port |
+| Actor Status | Local interface status of the slave port |
+| Partner Status | LACP peer's interface status of the slave port |
