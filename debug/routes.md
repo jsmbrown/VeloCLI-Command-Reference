@@ -31,7 +31,7 @@ P - PG, B - BGP, D - DCE, L - LAN SR, C - Connected, O - External, W - WAN SR, S
 | Next Hop ID | UUID of the next hop peer edge or gateway |
 | Destination Name | Name of the final destination edge or gateway for the route (may differ from next hop in the event of an intermediate hub edge/gateway, etc.)|
 | Reachable | True/False value indicating whether the destination prefix is currently reachable |
-| Preference | Route preference value based on route type as defined in the [VeloCloud SD-WAN Routing Overview](https://techdocs.broadcom.com/us/en/vmware-sde/velocloud-sase/vmware-velocloud-sd-wan/6-2/sd-wan-administration-guide/overview-3-admin/vmware-sd-wan-routing-overview-admin.html) |
+| Preference | Route preference value based on route type as defined in the [VeloCloud SD-WAN Routing Overview](https://techdocs.broadcom.com/us/en/vmware-sde/velocloud-sase/vmware-velocloud-sd-wan/6-2/sd-wan-administration-guide/overview-3-admin/vmware-sd-wan-routing-overview-admin.html). The lower the preference value, the higher the priority. |
 | Flags | Flag values to indicate route type and other attributes.  Flag definitions are included at the bottom of the output |
 | Vlan | VLAN ID of the destination interface for the route ('0' for overlay and routes via untagged interfaces) |
 | Intf | Destination interface for the route ('any' for overlay routes) |
