@@ -12,8 +12,29 @@ Dumps the tunnel count of connected VeloCloud Edges. This command is used to asc
 
 ##  Example usage
 ```
-example_com:velocli> debug --tunnel_counts
+example_com:velocli> debug --tunnel_counts all
+[
+  {
+    "peer_name": "vcg44-dfw1",
+    "reachable_tunnel": 1,
+    "vceid": ""
+  },
+  {
+    "peer_name": "AzurevWAN",
+    "reachable_tunnel": 1,
+    "vceid": ""
+  },
+  {
+    "peer_name": "vcg88-ord1",
+    "reachable_tunnel": 1,
+    "vceid": ""
+  }
+]
 ```
 
 ##  Field descriptions
-*(The specific output format and fields for this command were not provided in the input. The output would typically list peer Edges/Gateways and their respective tunnel counts to the local Edge.)*
+| Field | Description |
+|---|---|
+| peer_name | Name of peer edge or gateway |
+| reachable_tunnel | Count of tunnels to the peer |
+| vceid | UUID of peer edge (blank for gateway or cluster peers) |
