@@ -26,15 +26,15 @@ VeloCloud SDA Client Connector     0    0       0      E2Any    high  transactio
 |-----------------|------------------------------------------------------------------------------------------------------------|
 | `Name`          | The name of the business policy.                                                                           |
 | `Seg`           | The Segment ID to which this policy applies.                                                               |
-| `CBH`           | Conditional Backhaul status for this policy. `1` indicates CBH is enabled, `0` indicates it is disabled.   |
+| `CBH`           | Conditional Backhaul status for this policy. `1` indicates CBH configuration will be honored for traffic matching this policy, `0` indicates it is disabled.   |
 | `Hits`          | The number of times this policy has been matched by traffic flows.                                         |
-| `RouteType`     | The type of route defined by the policy (e.g., `E2Any` for Edge to Any destination).                       |
-| `Prio`          | The priority of the policy (e.g., `normal`, `high`). Higher priority policies are evaluated first.         |
-| `TrafficType`   | The classification of traffic this policy applies to (e.g., `transactional`, `realtime`, `bulk`).          |
-| `Routepolicy`   | The routing action for the traffic (e.g., `direct` for internet breakout, `gateway` for backhauling via a VeloCloud Gateway, `multipath` for SD-WAN overlay paths). |
+| `RouteType`     | The type of route defined by the policy (e.g., `E2Any` for Edge to Any destination)., `E2C`                       |
+| `Prio`          | Priority assigned to traffic matched in the policy (`low`, `normal`, or `high`).         |
+| `TrafficType`   | The classification assigned to traffic matched by this policy (`transactional`, `realtime`, or `bulk`).          |
+| `Routepolicy`   | The routing action for the traffic (e.g., `direct` for local internet breakout, `gateway` for backhauling via a VeloCloud Gateway. |
 | `ServiceGroup`  | The service group associated with the policy (e.g., `all`, or a specific Cloud Security Service (CSS)).    |
-| `LinkPolicy`    | The link steering strategy (e.g., `bw_balance` for bandwidth balancing, `loadbalance`, `fixed` for a specific link). |
-| `LinkMode`      | The mode for link selection (e.g., `auto`, `mandatory` to enforce a specific link or path type).           |
+| `LinkPolicy`    | The link steering strategy (e.g., `bw_balance` for direct route policy with link mode auto, `loadbalance` for gateway route policy with link mode auto, `replicate` for non-fixed realtime high or normal, `fixed` for a mandatory/preferred traffic steering). |
+| `LinkMode`      | The mode for link selection (e.g., `auto`, or `mandatory`/`preferred` to enforce a specific link or path type).           |
 | `Interface`     | The specific WAN interface selected if `LinkMode` is set to use a particular interface, otherwise `auto`.  |
-| `LinkLogId`     | An internal identifier for the link or path, often all zeros if not specific.                              |
-| `ErrorCorrection`| The Dynamic Error Correction (DEC) setting applied (e.g., `nack-` for NACK-based FEC, `none`).             |
+| `LinkLogId`     | Logical ID of the link or path, or all zeros if not steering traffic to a specific link/interface.                              |
+| `ErrorCorrection`| The Dynamic Error Correction (DEC) setting applied (e.g., `nack-` TCP traffic, `replicate` for realtime high/normal, or `none`).             |

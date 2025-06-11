@@ -1,7 +1,7 @@
 #	--bw_retest
 
 ##	Description
-This command initiates a bandwidth retest on all WAN interfaces of the VeloCloud Edge. This is useful for situations where link conditions may have changed and an updated bandwidth measurement is desired for optimal path selection and Quality of Experience (QoE) management. The VeloCloud Orchestrator typically schedules periodic bandwidth tests, but this command allows for an on-demand re-evaluation.
+This command initiates a bandwidth retest on all WAN interfaces of the VeloCloud Edge. This is useful for situations where link conditions may have changed and an updated bandwidth measurement is desired for optimal path selection and Quality of Experience (QoE) management.
 
 ##  Arguments (optional)
 | Argument | Description |
