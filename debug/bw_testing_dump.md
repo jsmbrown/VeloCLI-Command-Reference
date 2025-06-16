@@ -1,7 +1,7 @@
 #	--bw_testing_dump
 
 ##	Description
-This command dumps the current bandwidth test data. Bandwidth testing is a crucial component of the VeloCloud SD-WAN solution, used to assess the capacity and quality of underlying WAN links. This information is utilized by the VeloCloud Orchestrator and Edges for path selection, Quality of Experience (QoE) calculations, and Dynamic Multipath Optimization (DMPO) decisions.
+This command displays the current bandwidth test data for the VeloCloud Edge. It provides insights into the ongoing or completed bandwidth measurement processes for the WAN links, including the mode of operation, test counts, and retry attempts.
 
 ##  Arguments (optional)
 | Argument | Description |
@@ -11,11 +11,20 @@ This command dumps the current bandwidth test data. Bandwidth testing is a cruci
 ##  Example usage
 ```
 example_com:velocli> debug --bw_testing_dump
-[]
-
-example_com:velocli>
+[
+  {
+    "link": {
+      "bw_mode": "BURST MODE",
+      "bw_test_count": 0,
+      "bw_undermeasure_retry_count": 0
+    }
+  }
+]
 ```
 ##  Field descriptions
-| Column | Description |
+| Field | Description |
 |---|---|
-| N/A | The example output `[]` indicates that there is currently no bandwidth test data to display or that the data structure is empty. When data is present, it would typically include details about ongoing or completed bandwidth tests on various paths. |
+| `link` | An object containing details about a specific WAN link's bandwidth testing. |
+| `link.bw_mode` | Indicates the current mode of bandwidth measurement for the link. "BURST MODE" suggests the link is currently allowed to use its full available bandwidth, often after an initial measurement phase or when not actively testing. |
+| `link.bw_test_count` | The number of bandwidth tests that have been performed on this link. |
+| `link.bw_undermeasure_retry_count` | The number of times a bandwidth test has been retried due to the measured bandwidth being lower than expected or previous stable measurements, potentially indicating a temporary issue or inaccurate test. |
