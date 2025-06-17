@@ -19,46 +19,46 @@ example_com:velocli> debug --qoe_threshold
         "yellow": 200
       },
       "latency": {
-        "red": 500,
-        "yellow": 500
+        "red": 80,
+        "yellow": 50
       },
       "loss": {
-        "red": 20,
-        "yellow": 20
+        "red": "3.00",
+        "yellow": "1.00"
       }
     },
     "video": {
       "jitter": {
-        "red": 50,
-        "yellow": 50
+        "red": 15,
+        "yellow": 5
       },
       "latency": {
-        "red": 300,
-        "yellow": 300
+        "red": 65,
+        "yellow": 25
       },
       "loss": {
-        "red": 10,
-        "yellow": 10
+        "red": "0.10",
+        "yellow": "0.05"
       }
     },
     "voice": {
       "jitter": {
-        "red": 50,
-        "yellow": 50
+        "red": 30,
+        "yellow": 7
       },
       "latency": {
-        "red": 300,
-        "yellow": 300
+        "red": 65,
+        "yellow": 25
       },
       "loss": {
-        "red": 10,
-        "yellow": 10
+        "red": "1.00",
+        "yellow": "0.30"
       }
     }
-  }
+  },
+  "qoeThreshVersion": 0
 }
 ```
-*Note: The example output above is illustrative. The actual values may vary based on the Edge's configuration.*
 
 ##  Field descriptions
 The output is a JSON object detailing QoE thresholds for different application categories and network metrics.
@@ -69,7 +69,8 @@ The output is a JSON object detailing QoE thresholds for different application c
 | `qoe.<app_category>`            | An object representing an application category for which specific QoE thresholds are defined. Common categories include `trans` (transactional), `video`, and `voice`. |
 | `qoe.<app_category>.<metric>`   | An object defining the thresholds for a specific network performance metric within an application category. Metrics include `jitter` (in milliseconds), `latency` (in milliseconds), and `loss` (as a percentage). |
 | `qoe.<app_category>.<metric>.red`    | The "red" threshold value for the specified metric and application category. If the measured value for this metric exceeds the "red" threshold, the path quality is considered poor for that application type. |
-| `qoe.<app_category>.<metric>.yellow` | The "yellow" threshold value for the specified metric and application category. If the measured value for this metric exceeds the "yellow" threshold but is less than or equal to the "red" threshold, the path quality is considered fair (or degraded) for that application type. Path quality is considered "good" if the metric is below the "yellow" threshold. |
+| `qoe.<app_category>.<metric>.yellow` | The "yellow" threshold value for the specified metric and application category. If the measured value for this metric exceeds the "yellow" threshold but is less than or equal to the "red" threshold, the path quality is considered fair (or degraded) for that application type. Path quality is considered "good" (green) if the metric is below the "yellow" threshold. |
+| `qoe.qoeThresholdVersion` | Version number of QoE threshold configuration (zero when using default values instead of user configured) |
 
 **Example Breakdown:**
 *   `qoe.trans.jitter.red: 200` means that for transactional applications, if the jitter on a path exceeds 200ms, the path's quality is considered "red" (poor) for transactional traffic.
