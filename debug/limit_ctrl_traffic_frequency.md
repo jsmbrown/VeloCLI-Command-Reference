@@ -25,5 +25,5 @@ example_com:velocli> debug --limit_ctrl_traffic_frequency
 |-------------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------|
 | `clock_sync_minutes_limit_ctrl_pkt` | The interval, in minutes, for sending clock synchronization packets when control traffic limiting is active.                                |
 | `disable_hb_probe_limit_ctrl_pkt`   | Indicates whether heartbeat probes are disabled (`true`) or enabled (`false`) on wireless links when control traffic limiting is active. Disabling probes reduces control traffic but may impact the speed of path down detection. |
-| `limit_ctrl_traffic_enabled`        | Shows the status of the control traffic limiting feature. `0` typically indicates disabled, while `1` indicates enabled. |
+| `limit_ctrl_traffic_enabled`        | Shows the status of the control traffic limiting feature. `0` indicates disabled, while `1` indicates enabled. |
 | `traffic_hb_ms_limit_ctrl_pkt`      | The interval, in milliseconds (ms), for sending heartbeat (HB) packets when control traffic limiting is active. A higher value means less frequent heartbeats. |
