@@ -15,6 +15,10 @@ IP ADDR                                                         NETMASK         
 2620:1ec:4::192                 ffff:ffff:ffff:ffff:ffff:ffff:ffff:ffff                                                           [25, 80, 143, 443, 587, 993, 995]                                                                                                                                      []              APP_OFFICE365  APP_CLASS_BUSINESS_COLLABORATION
 2620:1ec:c::10                  ffff:ffff:ffff:ffff:ffff:ffff:ffff:ffff                                                           [25, 80, 143, 443, 587, 993, 995]                                                                                                                                      []              APP_OFFICE365  APP_CLASS_BUSINESS_COLLABORATION
 2620:1ec:c::11                  ffff:ffff:ffff:ffff:ffff:ffff:ffff:ffff                                                           [25, 80, 143, 443, 587, 993, 995]                                                                                                                                      []              APP_OFFICE365  APP_CLASS_BUSINESS_COLLABORATION
+
+120.29.148.0                                              255.255.255.0                                            [5091, 443, 390, 1720, 5060, 5061, [3000, 4000]]                                                                                                    [[20000, 64000], 5060, [3000, 4000]]               APP_ZOOM_CRC  APP_CLASS_BUSINESS_COLLABORATION
+120.29.148.0                                              255.255.255.0                                                                       [80, 443, 8801, 8802]                                                                                                              [3478, 3479, [8801, 8810]]                   APP_ZOOM  APP_CLASS_BUSINESS_COLLABORATION
+120.53.198.0                                              255.255.255.0  
 ```
 
 ##  Field descriptions
