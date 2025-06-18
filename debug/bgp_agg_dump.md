@@ -26,6 +26,7 @@ Display all BGP aggregate entries:
 ```
 example_com:velocli> debug --bgp_agg_dump
 Segment   Address  Masklen  AS-set  Summary-only  Marker  RefCnt
+1         10.0.0.0       8    True          True       1       5
 Marker decode: 0 - NOT_MARKED, 1 - MARKED_PRESENT, 2 - MARKED_UPDATE
 ```
 
