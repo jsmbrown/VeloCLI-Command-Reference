@@ -1,4 +1,4 @@
-#	`--bgp_agg_dump` `[[all | <destination_ip_prefix>] [all | <segment_id>] [all | v4 | v6]]`
+#	--bgp_agg_dump [[all | <destination_ip_prefix>] [all | <segment_id>] [all | v4 | v6]]
 
 
 
