@@ -1,4 +1,4 @@
-# --bgp_local_ip_dump [[all | prefix] [all | segment-id]]
+# --bgp_local_ip_dump
 
 ## Description
 Displays the list of BGP (Border Gateway Protocol) local IP addresses known to the VeloCloud Edge. These IP addresses are used by the BGP process on the Edge, for example, as source addresses for BGP peering sessions or as next-hop addresses in BGP advertisements. The list can be filtered by a specific IP prefix and/or by VeloCloud segment ID. BGP is a standard routing protocol used for exchanging routing information, often between the Edge and LAN-side routers, or between Edges and VeloCloud Gateways.
