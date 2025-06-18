@@ -6,7 +6,7 @@ This command dumps the current bandwidth test data, including current reschedule
 ##  Arguments (optional)
 | Argument | Description |
 |---|---|
-| none | This command does not take any arguments. |
+| none | This command does not take any arguments. But you need to run "debug --debug_bw_test {Interface}" with interface as an argument to get correct output |
 
 ##  Example usage
 ```
@@ -19,6 +19,12 @@ usage: debug.py [-h] [--mode_link] [--timeout TIMEOUT SECONDS]
                 [--chat_stats [[sip=] [dip=] [dport=] [app_id=]
 ```
 ```
+example_com:velocli> debug --debug_bw_test GE1
+{
+  "GE1": "Bandwidth test request is being processed"
+}
+
+example_com:velocli>
 example_com:velocli> debug --bw_testing_dump
 [
 {
@@ -47,20 +53,20 @@ example_com:velocli> debug --bw_testing_dump
 ##  Field descriptions
 | Column | Description |
 |---|---|
-| bw_mode | Shows if it is mesured manually, slow start, Burst mode |
-| bw_test_count| bandwidth test count |
-| bw_undermeasure_retry_count | bandwidth undermeasure retry count |
-| bw_unmeasurable_retry_count | bandwidth unmeasurable retry count |
-| iface_name | Interface name |
-| link_bw_test_in_progress | link bandwidth test in progress  |
-| link_name | link name |
-| logicalId | logical Id |
-| measure_time | measure time |  
-| path_bw_test_queued | path bandwidth test queued  |
-| reschedule_in_progress | reschedule in progress |
-| reschedule_timer | reschedule timer |
-| rx_bw_kbps | 2371900 |
-| rx_test_in_progress | 0 |
-| td_version | 3629538363 |
-| tx_bw_kbps | 3086228 |
-| tx_test_in_progress | 0 |
+| bw_mode | Displays if it is mesured manually, slow start, Burst mode |
+| bw_test_count| Displays bandwidth test count |
+| bw_undermeasure_retry_count | Displays bandwidth undermeasure retry count |
+| bw_unmeasurable_retry_count | Displays bandwidth unmeasurable retry count |
+| iface_name | Displays Interface name |
+| link_bw_test_in_progress | Displays link bandwidth test in progress  |
+| link_name | Displays link name |
+| logicalId | Displays logical Id |
+| measure_time | Displays measure time |  
+| path_bw_test_queued | Displays path bandwidth test queued  |
+| reschedule_in_progress | Displays reschedule in progress |
+| reschedule_timer | Displays reschedule timer |
+| rx_bw_kbps | Displays rx bandwidth in kbps |
+| rx_test_in_progress |  Displays rx test in progress |
+| td_version |  Displays td version |
+| tx_bw_kbps |  Displays tx bandwidth in kbps |
+| tx_test_in_progress | Displays tx test in progress |
