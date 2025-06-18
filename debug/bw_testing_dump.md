@@ -9,15 +9,7 @@ This command dumps the current bandwidth test data, including current reschedule
 | none | This command does not take any arguments. But you need to run "debug --debug_bw_test {Interface}" with interface as an argument to get correct output |
 
 ##  Example usage
-```
-example_com:velocli> debug --debug_bw_test
-usage: debug.py [-h] [--mode_link] [--timeout TIMEOUT SECONDS]
-                [--logfile LOGFILE] [--limit N] [-v]
-                [--biz_pol_dump [[all | segment-id] [[all | policy-name]
-                ...]]] [--netflow_intervals] [--netflow_collectors]
-                [--netflow_filters [<collector_id>]] [--bw_testing_dump]
-                [--chat_stats [[sip=] [dip=] [dport=] [app_id=]
-```
+
 ```
 example_com:velocli> debug --debug_bw_test GE1
 {
