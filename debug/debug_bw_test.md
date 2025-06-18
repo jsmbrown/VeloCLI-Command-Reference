@@ -10,6 +10,10 @@ Run a bandwidth test on the path(s) connected through an interface.
 
 ##  Example usage
 ```
+example_com:velocli> debug --debug_bw_test {GE1,GE2,GE3,GE4,GE5,GE6,GE7,GE8,LAG1,LAG2,LAG3,LAG4}
+
+```
+```
 example_com:velocli> debug --debug_bw_test GE1
 {
   "GE1": "Bandwidth test request is being processed"
