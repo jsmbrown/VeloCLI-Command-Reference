@@ -26,3 +26,11 @@ example_com:velocli> debug --cbh-debug
 | `conditionalBhHoldoff` | The hold-off timer in milliseconds. This is the duration the Edge will wait before initiating Conditional Backhaul after detecting a trigger condition (e.g., primary paths down). This helps prevent flapping. |
 | `cssBackupPathsUp`     | The number of backup paths to the configured Cloud Security Service (CSS) that are currently operational.    |
 | `cssPrimaryPathsUp`    | The number of primary paths to the configured Cloud Security Service (CSS) that are currently operational.   |
+| 'pathToLocalGateway'   | The number of paths to the Local Gateway |
+| 'privatePathToHub'     |  |
+| 'publicAvailable'      |  |
+| 'publicUptime'         |  |
+| 'conditionalBhEnabled' |  |
+| 'hubList'              |  |
+| 'segId'                |  |
+  
