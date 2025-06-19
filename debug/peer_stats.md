@@ -8,8 +8,8 @@ Displays statistics for each peer VeloCloud Edge or Gateway. The `detailed` opti
 |---|---|
 | `<peer_id>` | Specifies the logical ID of a particular peer for which to display statistics. |
 | `all` (first argument) | Displays statistics for all known peers. This is the default if no peer ID is specified. |
-| `detailed` | Includes detailed path statistics for each tunnel associated with the peer(s). This includes metrics like latency, jitter, packet loss, and bandwidth for individual paths. |
-| `all` (second argument) | When used as the second argument, it implies showing all available information, which is effectively the same as `detailed` if a peer ID is specified, or detailed information for all peers if the first argument is also `all` or omitted. If only one `all` is provided, it's interpreted as the first argument (all peers). |
+| `detailed` | Includes detailed path statistics for each tunnel associated with the peer(s). |
+| `all` (second argument) | Standard output without individual path details.  This is the default if no 2nd argument is provided. |
 
 ##  Example usage
 ```
@@ -20,31 +20,11 @@ example_com:velocli> debug --peer_stats
       "path_stats": [],
       "peer_logical_id": "2bbfbb2b-4ee0-46a1-b394-01d8194f97b8",
       "peer_name": "vcg44-dfw1"
-    }
-    // ... more peers ...
-  ]
-}
-```
-**Example with `detailed` option (conceptual output structure):**
-```
-example_com:velocli> debug --peer_stats <peer_id> detailed
-{
-  "peer_stats_dump": [
-    {
-      "path_stats": [
-        {
-          "path_id": "some_path_id_1",
-          "tunnel_id": "some_tunnel_id_1",
-          "latency_ms": 10,
-          "jitter_ms": 2,
-          "loss_percentage": 0.1,
-          "tx_bps": 1000000,
-          "rx_bps": 500000
-          // ... other path specific stats ...
-        }
-      ],
-      "peer_logical_id": "2bbfbb2b-4ee0-46a1-b394-01d8194f97b8",
-      "peer_name": "vcg44-dfw1"
+      "peer_type": "VCE",
+      "rx_bytes": 923815640,
+      "rx_packets": 1193241,
+      "tx_bytes": 171525558,
+      "tx_packets": 903406
     }
   ]
 }
@@ -57,3 +37,8 @@ example_com:velocli> debug --peer_stats <peer_id> detailed
 | `path_stats` | An array containing detailed statistics for each individual path (tunnel) to the peer. This array is populated when the `detailed` argument is used. Fields within this object can include path identifiers, latency, jitter, loss, and bandwidth metrics. |
 | `peer_logical_id` | The unique logical identifier of the peer VeloCloud Edge or Gateway. |
 | `peer_name` | The configured name of the peer VeloCloud Edge or Gateway. |
+| `peer_type` | `VCE` if peer is a VCG or non-hub VCE.  `DCE_CLIENT` if peer is a hub edge. |
+| `rx_bytes` | Number of bytes received from the peer. |
+| `rx_packets` | Number of packets received from the peer. |
+| `tx_bytes` | Number of bytes sent to the peer. |
+| `tx_packets` | Number of packets sent to the peer. |
