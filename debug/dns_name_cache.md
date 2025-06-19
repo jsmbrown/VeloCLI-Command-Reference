@@ -1,7 +1,7 @@
 #	--dns_name_cache [v4 | v6 | all]
 
 ##	Description
-Displays the contents of the DNS domain name cache on the VeloCloud Edge. This cache stores recently resolved domain names and their corresponding IP addresses to speed up subsequent lookups and is used for various functions, including connecting to VeloCloud infrastructure, Cloud Security Services (CSS), or other network destinations.
+Displays the contents of the DNS domain name cache on the VeloCloud Edge. This cache stores recently observed (either via DNS snooping or DPI on the edge) domain names and their corresponding IP addresses to facilitate matching of FQDN based firewall and business policies.
 
 ##	Arguments (optional)
 | Argument | Description |

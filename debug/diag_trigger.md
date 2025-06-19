@@ -12,8 +12,6 @@ This command triggers the generation of a diagnostic bundle on the VeloCloud Edg
 ```
 example_com:velocli> debug --diag_trigger
 null
-
-example_com:velocli>
 ```
 ##  Field descriptions
 | Column | Description |

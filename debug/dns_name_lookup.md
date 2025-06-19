@@ -6,27 +6,39 @@ This command queries the VeloCloud Edge's local DNS cache for a specified hostna
 ## Arguments
 | Argument   | Description                                                                                                                                                              |
 |------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| `HOSTNAME` | (Mandatory) The hostname (e.g., `www.velocloud.com`, `portal.sase.vmware.com`) to look up in the Edge's local DNS cache.                                                     |
+| `HOSTNAME` | (Mandatory) The hostname (e.g., `.velocloud.com`) to look up in the Edge's local DNS cache.                                                     |
 | `v4`       | (Optional) If provided as the second argument after `HOSTNAME`, the command will display only cached IPv4 addresses for the specified `HOSTNAME`.                            |
 | `v6`       | (Optional) If provided as the second argument after `HOSTNAME`, the command will display only cached IPv6 addresses for the specified `HOSTNAME`.                            |
-| `all`      | (Optional) If provided as the second argument after `HOSTNAME`, the command will display both IPv4 and IPv6 cached addresses. This is typically the default behavior if this second argument is omitted. |
+| `all`      | (Optional) If provided as the second argument after `HOSTNAME`, the command will display both IPv4 and IPv6 cached addresses. This is the default behavior if this second argument is omitted. |
 
 ## Example usage
-The command requires a `HOSTNAME` as its first argument. If this mandatory argument is not provided, the system will display usage instructions, as shown below:
 ```
-example_com:velocli> debug --dns_name_lookup
-Usage: debug.py --dns_name_lookup HOSTNAME [v4 | v6 | all]
+example_com:velocli> debug --dns_name_lookup .velocloud.net
+[
+  {
+    "address": "104.18.41.185",
+    "appid": 0,
+    "name": ".velocloud.net",
+    "ref_cnt": 0,
+    "source": "DNS",
+    "ttl": 273
+  },
+  {
+    "address": "172.64.146.71",
+    "appid": 0,
+    "name": ".velocloud.net",
+    "ref_cnt": 0,
+    "source": "DNS",
+    "ttl": 273
+  }
+]
 
-example_com:velocli>
 ```
-**Hypothetical successful execution:**
-To look up IPv4 addresses for `www.velocloud.com`:
-```
-example_com:velocli> debug --dns_name_lookup www.velocloud.com v4
-```
-*(Note: The exact output format for a successful command is not provided in the input. It would typically list the cached IP addresses and their TTLs.)*
-
 ## Field descriptions
 | Column | Description |
 |---|---|
-|   |  *Specific output fields for a successful command execution are not detailed in the provided example. A successful lookup would typically display the hostname queried, followed by any cached IP address(es) (IPv4 and/or IPv6 depending on the arguments used) and potentially their remaining Time-To-Live (TTL) in the cache.* |
+| `address` | IP address cached for the provided hostname. |
+| `appid` | Application ID associated with the provided hostname (`0` if hostname isn't mapped to an application definition) |
+| `name` | FQDN of the cache entry |
+| `source` | Source of the entry (either `DNS` for DNS snooping derived entries or `DPI` for DPI derived entries) |
+| `ttl` | Remaining time to live in seconds for the associated cache entry |

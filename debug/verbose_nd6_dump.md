@@ -13,18 +13,45 @@ This command dumps the Neighbor Discovery Protocol (NDP) cache for IPv6 (ND6) fo
 example_com:velocli> debug --verbose_nd6_dump
 [
   {
-    "cache_entry": [],
-    "interface": "GE1",
-    "snmp_index": 16777216
+    "cache_entry": [
+      {
+        "addr": "fe80::f99a",
+        "age": 23,
+        "ctag": 0,
+        "icmp_count": 0,
+        "in_progress": "FALSE",
+        "is_router": "TRUE",
+        "last_nd_pkt_rcvd_time": 1134438180,
+        "last_pkt_rcv": 18,
+        "last_state_update_time": 1134433171,
+        "mac": "54:83:3a:7c:f9:9a",
+        "refcnt": 2,
+        "stag": 0,
+        "state": "REACHABLE"
+      }
+    ],
+    "interface": "GE6",
+    "snmp_index": 16777222
   }
 ]
 ```
 
 ## Field descriptions
-The command output is a JSON array, where each object represents an active interface and its ND6 cache information.
-
 | Field         | Description                                                                                                                                                                                                                            |
 |---------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| `cache_entry` | An array containing details of individual ND6 cache entries for the interface. Each entry typically includes information like the neighbor's IPv6 address, its link-layer (MAC) address, state (e.g., STALE, REACHABLE), and potentially flags or timers. In the provided example, this array is empty, indicating no ND6 entries were present or displayed for this interface at the time of the command execution. |
+| `cache_entry` | An array containing details of individual ND6 cache entries for the interface. |
+| `cache_entry.addr` | IPv6 address of the neighbor entry. |
+| `cache_entry.age` | Age in seconds of the neighbor entry. |
+| `cache_entry.ctag` | VLAN ID on which the neighbor was discovered (`0` if no 802.1Q tag).  |
+| `cache_entry.icmp_count` | Number of ICMPv6 messages exchanged with this neighbor. |
+| `cache_entry.in_progress` | `true`/`false` indicator of whether discovery process is currently in progress. |
+| `cache_entry.is_router` | `true`/`false` indicator of whether the neighbor has been identified as a router via a router advertisement message. |
+| `cache_entry.last_nd_pkt_rcvd_time` | Time last neighbor discovery packet was received. |
+| `cache_entry.last_pkt_rcv` | Time since the last packet was received from the neighbor. |
+| `cache_entry.last_state_update_time` | Time of the most recent neighbor state change. |
+| `cache_entry.mac` | MAC address of the neighbor. |
+| `cache_entry.refcnt` | Reference count. |
+| `cache_entry.stag` | S-Tag on which the neighbor was discovered (`0` if no 802.1ad tag) |
+| `cache_entry.state` | Neighbor discovery status (i.e. `Incomplete`, `Reachable`, `Stale`, `Delay`, or `Probe`) |
 | `interface`   | The logical name of the network interface on the VeloCloud Edge (e.g., `GE1`) for which the ND6 cache information is being displayed.                                                                                                    |
 | `snmp_index`  | The SNMP (Simple Network Management Protocol) interface index (ifIndex). This is a unique positive integer that identifies this network interface for SNMP management purposes, allowing correlation with other SNMP data if needed.      |

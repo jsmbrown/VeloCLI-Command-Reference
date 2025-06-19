@@ -3,12 +3,11 @@
 ##	Description
 Enable/Disable scheduled extended statistics. These statistics can provide more detailed insights into network performance and behavior, complementing standard monitoring data.
 
-##	Arguments (optional)
+##	Arguments
 | Argument | Description |
 |---|---|
 | enable | Enables the collection and processing of scheduled extended statistics. |
 | disable | Disables the collection and processing of scheduled extended statistics. |
-| _&lt;none&gt;_ | If no argument is specified, the command displays usage information for the `debug.py` script, as shown in the example below. |
 
 ##	Example usage
 ```

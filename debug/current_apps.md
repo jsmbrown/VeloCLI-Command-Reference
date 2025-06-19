@@ -30,4 +30,4 @@ SRC IP                 DST IP  DST PORT  PROTOCOL  SEGID               APPLICATI
 | APPLICATION | Name of the identified application and its internal application ID.           |
 | HOSTNAME    | Hostname associated with the destination IP, if resolved.                   |
 | APP CLASS   | Classification category of the application and its internal class ID.       |
-| PATH        | The routing path taken by the application flow (e.g., Edge2CloudDirect, Routed, VeloCloud Path). |
+| PATH        | The routing path taken by the application flow (e.g., Edge2CloudDirect, Routed). |
