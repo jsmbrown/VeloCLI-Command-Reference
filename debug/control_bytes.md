@@ -1,4 +1,4 @@
-#	--control_bytes &lt;peer | link&gt; [clear | all]
+#	--control_bytes [[peer | link] [clear | all]]
 
 ##	Description
 Dumps the number of transmitted (tx) and received (rx) bytes and packets/messages for control messages, categorized by each peer or link. Control messages are part of the VeloCloud Management Protocol (VCMP) and VeloCloud Routing Protocol (VCRP) used for communication between Edges, Gateways, and the Orchestrator. These statistics are useful for monitoring the health and volume of control plane traffic on the VeloCloud Edge.

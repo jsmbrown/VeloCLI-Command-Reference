@@ -1,7 +1,7 @@
 #	--dc_routes [all|prefix] [all|segment-id]
 
 ##	Description
-Dumps the datacenter route table. This table contains routes learned from Hub Edges or Gateways that are designated as datacenters within the VeloCloud SD-WAN overlay. These routes are typically advertised via VCRP (VeloCloud Routing Protocol) from these datacenter entities.
+Dumps the datacenter route table. This table contains routes learned from non-SD-WAN destinations (NSDs) within the VeloCloud SD-WAN overlay.
 
 ##  Arguments (optional)
 | Argument | Description |
@@ -12,7 +12,11 @@ Dumps the datacenter route table. This table contains routes learned from Hub Ed
 ##  Example usage
 ```
 example_com:velocli> debug --dc_routes
-Address   Netmask  Type  Gateway  Next Hop ID  Dst LogicalId  Reachable  Metric  Preference  Flags  Vlan  Intf  MTU
+Address                 Netmask        Type  Gateway                           Next Hop ID                         Dst LogicalId  Reachable  Metric  Preference  Flags  Vlan  Intf  MTU
+169.254.4.4     255.255.255.255  datacenter      any  2bbfbb2b-4ee0-46a1-b394-01d8194f97b8  954dd5f7-8aeb-428b-bb4b-f6ce35f5e539       True       5           0     SR     0   any  N/A
+0.0.0.0         255.255.255.255  datacenter      any  2bbfbb2b-4ee0-46a1-b394-01d8194f97b8  88616e5e-e59b-406e-9c1e-39cd29cc9385      False       0           0    SRc     0   any  N/A
+0.0.0.0         255.255.255.255  datacenter      any  c8d0a769-1daf-4670-91ad-5b038ea9b4d6  f3598a75-8531-4636-ad69-eb48a816034c      False       0           0    SRc     0   any  N/A
+192.168.176.0     255.255.254.0  datacenter      any  2bbfbb2b-4ee0-46a1-b394-01d8194f97b8  954dd5f7-8aeb-428b-bb4b-f6ce35f5e539       True       0         999    SBR     0   any  N/A
 P - PG, D - DCE, L - LAN SR, C - Connected, O - External, W - WAN SR, S - SecureEligible, R - Remote, s - self, r - recursive, H - HA, m - Management, n - nonVelocloud, v - ViaVeloCloud, A - RouterAdvertisement, c - CWS, a - RAS, I - IPSec, G - GRE
 ```
 
@@ -21,35 +25,14 @@ P - PG, D - DCE, L - LAN SR, C - Connected, O - External, W - WAN SR, S - Secure
 |---|---|
 | Address | The destination IP address for the route. |
 | Netmask | The subnet mask for the destination IP address. |
-| Type | The type of route. This indicates how the route was learned or its nature within the SD-WAN fabric (e.g., connected, static, BGP). |
+| Type | The type of route (will always be `datacenter` in this command's output). |
 | Gateway | The gateway or next-hop IP address for this route. For overlay routes, this might be 'any' or a specific underlay IP. |
 | Next Hop ID | The logical identifier of the next hop VeloCloud Edge or Gateway. |
 | Dst LogicalId | The logical identifier of the destination VeloCloud Edge or Gateway. |
 | Reachable | Indicates whether the destination is currently reachable (True/False). |
 | Metric | A value used by routing protocols to determine the best path to a destination. Lower metrics are generally preferred. |
 | Preference | A value indicating the trustworthiness or preference of the route source. Lower values are generally preferred. |
-| Flags | Provides additional information about the route. See the legend below the table in the example output for specific flag meanings. |
+| Flags | Provides additional information about the route. Legend of the flag definitions is included in the bottom row of the output. |
 | Vlan | The VLAN ID associated with this route, if applicable. |
 | Intf | The interface associated with this route. |
-| MTU | The Maximum Transmission Unit for the path associated with this route. |
-
-**Flags Legend:**
-*   **P**: PG (Partner Gateway)
-*   **D**: DCE (Dynamic Cost Exchange - an internal VeloCloud mechanism)
-*   **L**: LAN SR (LAN Static Route)
-*   **C**: Connected
-*   **O**: External (Typically OSPF or BGP learned routes redistributed into VeloCloud)
-*   **W**: WAN SR (WAN Static Route)
-*   **S**: SecureEligible (Eligible for secure VeloCloud tunnels)
-*   **R**: Remote (A route learned from another VeloCloud device)
-*   **s**: self (A route originating from the local Edge)
-*   **r**: recursive (A route that requires a recursive lookup)
-*   **H**: HA (High Availability related route)
-*   **m**: Management (Route related to management traffic)
-*   **n**: nonVelocloud (Route to a Non-VeloCloud Site/NSD)
-*   **v**: ViaVeloCloud (Route learned via the VeloCloud overlay)
-*   **A**: RouterAdvertisement (Learned via IPv6 Router Advertisement)
-*   **c**: CWS (Cloud Web Security / CSS related route)
-*   **a**: RAS (Remote Access User related route)
-*   **I**: IPSec (Route learned via an IPSec tunnel to an NVS/NSD)
-*   **G**: GRE (Route learned via a GRE tunnel to an NVS/NSD)
+| MTU | The Maximum Transmission Unit for the path associated with the destination interface of this route (will be `N/A` for overlay dc routes). |
