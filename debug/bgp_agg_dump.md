@@ -1,4 +1,6 @@
-#	`--bgp_agg_dump` `[[all | <destination_ip_prefix>] [all | <segment_id>] [all | v4 | v6]]`
+#	--bgp_agg_dump [[all | <destination_ip_prefix>] [all | <segment_id>] [all | v4 | v6]]
+
+
 
 ##	Description
 Dumps the BGP (Border Gateway Protocol) aggregate view from the VeloCloud Edge. BGP route aggregation is a mechanism to consolidate multiple specific BGP routes into a single, more general route advertisement. This process helps to reduce the size of BGP routing tables, improving overall routing stability and efficiency. This command displays the current state of these aggregate routes as known by the Edge.
@@ -24,6 +26,7 @@ Display all BGP aggregate entries:
 ```
 example_com:velocli> debug --bgp_agg_dump
 Segment   Address  Masklen  AS-set  Summary-only  Marker  RefCnt
+1         10.0.0.0       8    True          True       1       5
 Marker decode: 0 - NOT_MARKED, 1 - MARKED_PRESENT, 2 - MARKED_UPDATE
 ```
 

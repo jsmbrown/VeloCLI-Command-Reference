@@ -12,13 +12,10 @@ Retests the bandwidth on a specific WAN link identified by its internal logical 
 The following example shows the output when `debug --bw_test_link` is invoked without the required `logical-id` argument. To properly initiate a bandwidth retest, a specific `logical-id` must be provided (e.g., `debug --bw_test_link 1`).
 
 ```
-example_com:velocli> debug --bw_test_link
-usage: debug.py [-h] [--mode_link] [--timeout TIMEOUT SECONDS]
-                [--logfile LOGFILE] [--limit N] [-v]
-                [--biz_pol_dump [[all | segment-id] [[all | policy-name]
-                ...]]] [--netflow_intervals] [--netflow_collectors]
-                [--netflow_filters [<collector_id>]] [--bw_testing_dump]
-                [--chat_stats [[sip=] [dip=] [dport=] [app_id=]
+example_com:velocli> debug --bw_test_link 00000003-40c8-4ad6-80b1-c50f34726f11
+{
+  "bw_test": "test in progress"
+}
 ```
 
 ##  Field Descriptions
