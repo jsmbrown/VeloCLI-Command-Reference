@@ -1,4 +1,4 @@
-# `debug --connected_routes`
+# debug --connected_routes [[all|prefix] [all|segment-id] [all|v4|v6] ...]
 
 ## Description
 Displays routes for networks directly connected to the VeloCloud Edge interfaces. These routes are fundamental to the VeloCloud Routing Protocol (VCRP) and represent the local networks accessible via the Edge.
@@ -33,13 +33,10 @@ Address                Netmask  Type  Gateway  Next Hop ID  Dst LogicalId  Reach
 | Next Hop ID   | Not Applicable (`N/A`) for directly connected routes.                                                      |
 | Dst LogicalId | Destination Logical ID. Not Applicable (`N/A`) for directly connected routes.                              |
 | Reachable     | Indicates if the connected network is currently reachable (`True` or `False`).                               |
-| Metric        | The administrative distance or cost associated with this route. For connected routes, this is typically 0. |
+| Metric        | The administrative distance or cost associated with this route. For connected routes, this is typically 0 except for WAN interfaces. |
 | Preference    | VeloCloud specific route preference value.                                                                 |
-| Flags         | Route flags providing additional information. Common flags include: <br> `C` - Connected <br> `S` - SecureEligible (can be advertised over SD-WAN tunnels) <br> (See legend below for more flags) |
-| Vlan          | The VLAN ID associated with the interface if applicable. `0` typically means untagged or default VLAN.     |
+| Flags         | Route flags providing additional information. Common flags include: `C` - Connected or `S` - SecureEligible |
+| Vlan          | The VLAN ID associated with the interface if applicable. `0` means untagged or default VLAN.     |
 | Intf          | The local Edge interface (e.g., `GE1`, `LO1`) to which this network is connected.                          |
 | MTU           | Maximum Transmission Unit. `N/A` indicates it may use the interface's default or is not specified here.    |
 | SEG           | The Segment ID to which this connected route belongs. Network segmentation allows for traffic isolation.   |
-
-**Route Flags Legend:**
-P - PG (Partner Gateway), B - BGP, D - DCE (Dynamic Cost Egress), L - LAN SR (Static Route), C - Connected, O - External (OSPF), W - WAN SR (Static Route), S - SecureEligible, R - Remote, s - self, r - recursive, H - HA (High Availability), m - Management, n - nonVelocloud, v - ViaVeloCloud, A - RouterAdvertisement, c - CWS (Cloud Web Security), a - RAS (Remote Access Server), M - MTGRE (Multi-hop GRE), g - Global PG Static, b - Blackhole, I - IPSec, G - GRE, p - Peer

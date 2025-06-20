@@ -10,16 +10,11 @@ Clears the IPv6 Neighbor Discovery (ND6) cache on the VeloCloud Edge. The ND6 ca
 
 ##  Example usage
 ```
-example_com:velocli> debug --clear_nd6_cache
-usage: debug.py [-h] [--mode_link] [--timeout TIMEOUT SECONDS]
-                [--logfile LOGFILE] [--limit N] [-v]
-                [--biz_pol_dump [[all | segment-id] [[all | policy-name]
-                ...]]] [--netflow_intervals] [--netflow_collectors]
-                [--netflow_filters [<collector_id>]] [--bw_testing_dump]
-                [--chat_stats [[sip=] [dip=] [dport=] [app_id=]
+example_com:velocli> debug --clear_nd6_cache GE2
+{
+  "INFO": "ND6 Cache cleaned up"
+}
 ```
 
 ##  Field descriptions
-| Column | Description |
-|---|---|
-|   |   |
+Output of this command is either a confirmation that ND6 cache is cleared, or, an error message if a valid interface isn't specified.
