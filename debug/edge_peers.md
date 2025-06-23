@@ -1,23 +1,32 @@
 #	--edge_peers
 
 ##	Description
-This command displays a list of all peer VeloCloud Edges known to the local Edge. For each peer, it shows associated subnets and the VeloCloud Gateway through which the peer is reached. This information is crucial for understanding the dynamic tunnel (DE2E) and static tunnel connectivity within the SD-WAN overlay.
+Dumps all peer subnets and their gateway associations. This command provides a list of VeloCloud Edges and Gateways that are peers to the current edge, along with details about their IP address family and segment ID.
 
 ##  Arguments (optional)
-| Argument | Description |
-|---|---|
-| none | This command does not accept any arguments. |
+This command does not take any arguments.
 
 ##  Example usage
 ```
 example_com:velocli> debug --edge_peers
 {
-  "edge_peers": []
+  "edge_peers": [
+    {
+      "family": "IPv4",
+      "peer_id": "88616e5e-e59b-406e-9c1e-39cd29cc9385",
+      "segment_id": 0
+      "subnet_count": 7,
+      "type": 1
+    }
+  ]
 }
 ```
-*Note: The example above shows an empty list, indicating no active peer connections or that the command was run on an Edge with no established peer relationships at that moment. In a populated environment, the array would contain objects detailing each peer.*
 
 ##  Field descriptions
-| Field | Description |
-|---|---|
-| edge_peers | A JSON array where each element represents a peer Edge. The specific details within each peer object (not shown in the empty example) would typically include information such as the peer Edge's ID, its advertised subnets, and the Gateway facilitating the connection. |
+| Field         | Description                                                                 |
+|---------------|-----------------------------------------------------------------------------|
+| `edge_peers`  | An array containing objects, where each object represents a peer VeloCloud Edge. |
+| `family`      | The IP address family used for communication with the peer (e.g., "IPv4", "IPv6"). |
+| `peer_id`     | The unique logical identifier of the peer VeloCloud Edge.                     |
+| `segment_id`  | The network segment ID to which this peer information pertains.             |
+| `subnet_count`  | Quantity of subnets advertised by the peer.  |
