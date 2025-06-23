@@ -10,7 +10,15 @@ This command takes no arguments.
 ```
 example_com:velocli> debug --vnf
 {
-  "networks": []
+  "networks": [
+    {
+      "down": 0, 
+      "mac": "f0:8e:db:dd:00:00", 
+      "name": "sfp1", 
+      "tag": 0, 
+      "vlan": 0
+    }
+  ]
 }
 ```
 
@@ -19,4 +27,9 @@ The output is a JSON object with the following fields:
 
 | Field      | Description                                                                                                |
 |------------|------------------------------------------------------------------------------------------------------------|
-| `networks` | An array of objects, where each object represents a network configured for or used by a VNF. If no VNFs are configured or active, or if they have no specific network configurations exposed through this command, this array may be empty. Each network object could contain details like network name, VLAN ID, IP addressing, and interfaces associated with the VNF. |
+| `networks` | An array of objects, where each object represents a LAN interface or VLAN configured for VNF insertion. |
+| `down` | Interface/VLAN operational status with `0` indicating that the network is up, or `1` if the network is down. |
+| `mac` | MAC address of the interface/VLAN |
+| `name` | Logical name of the interface/VLAN |
+| `tag` | 802.1Q tag (`0` if untagged) |
+| `VLAN` | VLAN ID (`0` for routed interfaces) |
