@@ -40,7 +40,7 @@ RIB entries 0, using 0 bytes of memory
 Peers 1, using 22 KiB of memory
 
 Neighbor            V         AS   MsgRcvd   MsgSent   TblVer  InQ OutQ  Up/Down State/PfxRcd      PfxSnt
-fd52:6cbf:1d43::2:2 4      65505         0         0        0    0    0    never         Idle           
+fd52:6cbf:1d43::2:2 6      65505         0         0        0    0    0    never         Idle           
 
 Total number of neighbors 1
 ```

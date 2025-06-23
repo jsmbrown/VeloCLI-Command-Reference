@@ -15,13 +15,32 @@ Provides a concise summary of the routing table status on the VeloCloud Edge. Th
 example_com:velocli> debug --rsummary
 [
   {
-    "route6_version": 202,
-    "route_version": 225,
+    "route6_version": 8951,
+    "route_version": 9306,
     "rsummary": {
-      "cloud_routes": 3
-    }
+      "cloud_routes": 4,
+      "dc_routes": 0,
+      "e2dc_routes": 2,
+      "e2e_bgp_routes": 0,
+      "e2e_connected_routes": 0,
+      "e2e_ospf_routes": 0,
+      "e2e_static_routes": 0,
+      "local_bgp_routes": 0,
+      "local_connected_routes": 4,
+      "local_connected_routes6": 0,
+      "local_mgmt_routes": 0,
+      "local_ospf_routes": 0,
+      "local_static_routes": 0,
+      "local_static_routes6": 0,
+      "pg_bgp_routes": 0,
+      "pg_static_routes": 0,
+      "total_routes": 10,
+      "unknown_routes": 0
+    },
+    "segment_id": 0
   }
 ]
+
 ```
 
 ## Field descriptions
