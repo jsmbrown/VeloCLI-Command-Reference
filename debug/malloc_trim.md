@@ -10,5 +10,6 @@ This command takes no arguments.
 ```
 example_com:velocli> debug --malloc_trim
 
-example_com:velocli>
 ```
+## Field Descriptions
+This command doesn't generate any output.
