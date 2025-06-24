@@ -30,10 +30,10 @@ Output provides details about the cluster's state, members, and other relevant H
 The output is in JSON format. The fields displayed will vary depending on whether clustering is enabled and the current state of the cluster.
 | Field | Description |
 |---|---|
-| cpu_pct | |
-| id | |
-| mem_pct | |
-| name | |
-| rebalancing | |
-| route_cnt | |
-{ tunnel_pct |  |
+| cpu_pct | CPU percent utilization of the Hub |
+| id | ID of the cluster |
+| mem_pct | Percent memroy utilizaiton of the Hub |
+| name | Name of the Cluster |
+| rebalancing | True or False if Auto Rebalancing is enabled |
+| route_cnt | Route count of the Hub |
+| tunnel_pct | Percent of tunnels the Hub supports |
