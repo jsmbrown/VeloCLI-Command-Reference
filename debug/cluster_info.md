@@ -13,12 +13,18 @@ The following example shows the output when clustering is not enabled on the Edg
 ```
 example_com:velocli> debug --cluster_info
 {
-  "Error": "Clustering disabled"
+  "cpu_pct": 8,
+  "id": "5c715cf5-515c-4657-a45f-65c6f8f6e15b",
+  "mem_pct": 29,
+  "name": "DC",
+  "rebalancing": false,
+  "route_cnt": 1,
+  "tunnel_pct": 12
 }
 
 example_com:velocli>
 ```
-If clustering were enabled, the output would provide details about the cluster's state, members, and other relevant HA information.
+Output provides details about the cluster's state, members, and other relevant HA information.
 
 ##  Field descriptions
 The output is in JSON format. The fields displayed will vary depending on whether clustering is enabled and the current state of the cluster.
