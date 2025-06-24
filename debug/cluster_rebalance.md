@@ -15,7 +15,9 @@ To trigger a rebalance that includes the current Hub in the distribution:
 example_com:velocli> debug --cluster_rebalance include-self
 
 {
+
   "Rebalance cluster": "Cluster rebalance request sent to gateway"
+
 }
 
 ```
@@ -25,7 +27,9 @@ To trigger a rebalance that excludes the current Hub, offloading its spokes:
 example_com:velocli> debug --cluster_rebalance exclude-self
 
 {
+
   "Rebalance cluster": "Cluster rebalance request sent to gateway"
+
 }
 
 ```
