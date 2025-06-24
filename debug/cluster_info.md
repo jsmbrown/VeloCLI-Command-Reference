@@ -1,7 +1,7 @@
 #	--cluster_info
 
 ##	Description
-Displays information about the VeloCloud Edge's clustering status. Clustering is typically used for High Availability (HA) configurations, where two Edges operate as a redundant pair to ensure network continuity. This command provides insights into the current state of such a cluster, if configured.
+Displays information about the VeloCloud Edge's clustering status. Clustering is typically used for redundant configurations, where two or more Edges operate as Active Hubs to ensure network continuity. This command provides insights into the current state of such a cluster, if configured.
 
 ##  Arguments (optional)
 | Argument | Description |
@@ -24,7 +24,6 @@ example_com:velocli> debug --cluster_info
 
 example_com:velocli>
 ```
-Output provides details about the cluster's state, members, and other relevant HA information.
 
 ##  Field descriptions
 The output is in JSON format. The fields displayed will vary depending on whether clustering is enabled and the current state of the cluster.
@@ -32,8 +31,8 @@ The output is in JSON format. The fields displayed will vary depending on whethe
 |---|---|
 | cpu_pct | CPU percent utilization of the Hub |
 | id | ID of the cluster |
-| mem_pct | Percent memroy utilizaiton of the Hub |
+| mem_pct | Percent memory utilization of the Hub |
 | name | Name of the Cluster |
-| rebalancing | True or False if Auto Rebalancing is enabled |
+| rebalancing | True or False if Auto Rebalancing is enabled for the Cluster |
 | route_cnt | Route count of the Hub |
 | tunnel_pct | Percent of tunnels the Hub supports |
