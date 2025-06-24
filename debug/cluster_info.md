@@ -30,5 +30,10 @@ Output provides details about the cluster's state, members, and other relevant H
 The output is in JSON format. The fields displayed will vary depending on whether clustering is enabled and the current state of the cluster.
 | Field | Description |
 |---|---|
-| Error | If present, this field indicates an error condition or a specific status, such as "Clustering disabled" if the HA feature is not active or configured on the Edge. |
-| *(other fields)* | When clustering is enabled and operational, various other fields will be present. These can include, but are not limited to: cluster ID, role (e.g., active, standby), peer information, state, last state change, and synchronization status. The specific set of fields provides a comprehensive overview of the HA cluster's health and configuration. |
+| cpu_pct | |
+| id | |
+| mem_pct | |
+| name | |
+| rebalancing | |
+| route_cnt | |
+{ tunnel_pct |  |
