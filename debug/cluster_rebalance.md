@@ -13,6 +13,7 @@ This command is executed on a VeloCloud Hub Edge within a cluster to initiate a 
 To trigger a rebalance that includes the current Hub in the distribution:
 ```
 example_com:velocli> debug --cluster_rebalance include-self
+
 {
   "Rebalance cluster": "Cluster rebalance request sent to gateway"
 }
@@ -22,6 +23,7 @@ example_com:velocli> debug --cluster_rebalance include-self
 To trigger a rebalance that excludes the current Hub, offloading its spokes:
 ```
 example_com:velocli> debug --cluster_rebalance exclude-self
+
 {
   "Rebalance cluster": "Cluster rebalance request sent to gateway"
 }
